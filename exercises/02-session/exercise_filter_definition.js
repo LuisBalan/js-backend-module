@@ -28,3 +28,19 @@ function filter(arr, callback){
 }
 
 console.log(filter(arreglo, evenCriteria))
+
+
+const getFilteredArray = (arr, callback) => {
+    const resultado = [];
+    for(item of arr){
+        if(callback(item)){
+            resultado.push(item)
+        }
+    }
+    return resultado;
+}
+
+let testingArrayTwo = [5, 5, 7, 5, 8];
+console.log(testingArrayTwo)
+let test = getFilteredArray(testingArrayTwo, evenCriteria)
+console.log(test)
