@@ -8,9 +8,9 @@ const server = http.createServer((request, response) => {
     response.statusCode = 200;
     response.setHeader('Content-type', 'text/plain');
 
-    if(url === `/koder` && request.method === 'GET'){
+    if(url === `/koder` && metodo === 'GET'){
         response.write('Aquí están todos los koders')
-    }else if(url === '/koder' && request.method === 'POST'){
+    }else if(url === '/koder' && metodo === 'POST'){
         response.write('Aquí puedes crear koders')
     }else{
         response.statusCode = 400
