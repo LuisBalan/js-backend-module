@@ -176,4 +176,6 @@ const createAndReadFile = async (name, content, newContent) => {
     await readFile(name);
 }
 
-createAndReadFile("oneRandomFile", "random content", "\nanother random content")
+// createAndReadFile("oneRandomFile", "random content", "\nanother random content")
+
+deleteNonEmptyDir('oneDir')
