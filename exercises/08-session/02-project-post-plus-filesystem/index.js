@@ -7,6 +7,16 @@ const bodyParser = require('body-parser');
 // const multer = require('multer');
 // const upload = multer();
 
+const addContent = async = (fileName, newContent) => {
+    try{
+     await fs.appendFile(fileName, newContent)
+
+    }catch{
+        console.log(`Error`)
+    }
+    
+}
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
@@ -19,3 +29,4 @@ app.post('/koders', (req, res) => {
 app.listen(port, () => {
     console.log(`Starting POST endpoint.`)
 })
+
