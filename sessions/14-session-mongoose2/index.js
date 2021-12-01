@@ -17,12 +17,23 @@ app.get('/', (req, res) => {
 
 app.get('/koders', async (req, res) => {
 
-    //cargar los koders
-    const koders = await Koder.find({});
-    console.log(koders)
-   
-    //mandar msj de respuesta
-    res.json(koders)
+    try{
+        //cargar los koders
+        const koders = await Koder.find({});
+        console.log(koders)
+       
+        //mandar msj de respuesta
+        res.json(koders)
+
+    }catch(error){
+
+    }
+    
+})
+
+app.post('/koders', (req, res) => {
+    res.statusCode = 201;
+    res.json({success: true})
 })
 
 
