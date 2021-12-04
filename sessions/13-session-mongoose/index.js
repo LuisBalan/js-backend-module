@@ -57,9 +57,10 @@ mongoose
         })
 
         await Koder.create({
+            name: 'Marco',
             lastName: 'Lopez',
             age: 18,
-            gender: 'masculino'
+            gender: 'm'
         })
 
                 

@@ -1,18 +1,19 @@
 const express = require('express');
 const app = express();
-const port = 8080;
+const PORT = 8080;
 const fs = require('fs/promises');
-const encoding = 'utf-8'
+const ENCODING = 'utf-8';
+const KODERS_FILE = 'koders.json'
 
 // function to read the content of koders.json
-const getFileContent = async (fileName) => {
+const getFileContent = async (KODERS_FILE) => {
     try{
-        const fileContent = await fs.readFile(fileName, encoding);
+        const fileContent = await fs.readFile(KODERS_FILE, ENCODING);
         console.log(fileContent)
         return fileContent
 
     }catch{
-        console.log(`Error to read ${fileName}.`)
+        console.log(`Error to read ${KODERS_FILE}.`)
 
     }
 }
@@ -28,8 +29,8 @@ const makeResponse = (fileContent) => {
         res.json(JSON.parse(fileContent))
     })
     
-    app.listen(port, () => {
-        console.log(`Response from localhost:${port}`)
+    app.listen(PORT, () => {
+        console.log(`Response from localhost:${PORT}`)
     })
 
     
